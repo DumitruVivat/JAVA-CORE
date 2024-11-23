@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    image: bellsoft/liberica-openjdk-alpine:11.0.16.1-1
+    command: javac -sourcepath /app/src -d /app/out /app/src/ru/gb/jcore/sample/Main.java
+    volumes:
+      - ./out:/app/out   # монтируем каталог out на хосте в /app/out контейнера
+      - ./src:/app/src   # монтируем исходный код на хосте в /app/src контейнера

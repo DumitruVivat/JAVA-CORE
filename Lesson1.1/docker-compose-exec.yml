@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  app:
+    image: bellsoft/liberica-openjdk-alpine:11.0.16.1-1
+    command: java -classpath /app/out ru.gb.jcore.sample.Main
+    volumes:
+      - ./out:/app/out   # монтируем каталог out на хосте в /app/out контейнера
